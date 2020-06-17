@@ -1,0 +1,18 @@
+server:
+  port: 8120
+  servlet:
+    context-path: /
+spring:
+  application:
+    name: microservice-cloud-consumer
+eureka:
+  client:
+    service-url:
+      defaultZone: http://127.0.0.1:8080/eureka/
+  instance:
+    instance-id: microservice-cloud-consumer
+feign:
+  httpclient:
+    enabled: true
+  hystrix:
+    enabled: true

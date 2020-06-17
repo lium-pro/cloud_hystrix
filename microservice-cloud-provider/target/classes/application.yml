@@ -1,0 +1,31 @@
+
+# mysql整合
+spring:
+  datasource:
+    name: haha
+    type: org.springframework.jdbc.datasource.DriverManagerDataSource
+    url: jdbc:mysql://localhost:3306/mysql2?serverTimezone=UTC
+    driver-class-name: com.mysql.jdbc.Driver
+    username: lium
+    password: liumeng123
+  application:
+    name: microservice-cloud-provider
+#mybatis整合
+mybatis:
+  type-aliases-package: com.lium.bean
+  # mapper-locations: classpath:com.lium.mapper/*.xml
+
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://127.0.0.1:8080/eureka/
+  instance:
+    hostname: microservice-cloud-provider
+    instance-id: microservice-cloud-provider
+    prefer-ip-address: true
+server:
+  port: 8100
+  servlet:
+    context-path: /
